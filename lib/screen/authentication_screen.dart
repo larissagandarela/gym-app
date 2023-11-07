@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gym_app/_core/my_colors.dart';
+import 'package:gym_app/components/decoration_authentication.dart';
 
 class AuthenticationScreen extends StatefulWidget {
   const AuthenticationScreen({super.key});
@@ -53,30 +54,25 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                         height: 32,
                       ),
                       TextFormField(
-                        decoration: const InputDecoration(
-                          label: Text("E-mail"),
-                        ),
+                        decoration: getAuthenticationInputDecoration("E-mail"),
                       ),
+                      const SizedBox(height: 8),
                       TextFormField(
-                        decoration: const InputDecoration(
-                          label: Text("Senha"),
-                        ),
+                        decoration: getAuthenticationInputDecoration("Senha"),
                         obscureText: true,
                       ),
+                      const SizedBox(height: 8),
                       Visibility(
                         visible: !wantToEnter,
                         child: Column(
                           children: [
                             TextFormField(
-                              decoration: const InputDecoration(
-                                label: Text("Confirme Senha"),
-                              ),
-                             obscureText: true,
+                              decoration: getAuthenticationInputDecoration("Confirme senha"),
+                              obscureText: true,
                             ),
+                            const SizedBox(height: 8),
                             TextFormField(
-                              decoration: const InputDecoration(
-                                label: Text("Nome"),
-                              ),
+                              decoration: getAuthenticationInputDecoration("Nome"),
                             ),
                           ],
                         ),
